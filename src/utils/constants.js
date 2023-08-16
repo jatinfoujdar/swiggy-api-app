@@ -7,10 +7,32 @@ export const LOGO_URL =
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 
+export const CarouselImages =[
+  {
+    id: 'CarouselImages1',
+    url: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/8e3c441579fe371299ea23001551643f"
+
+  },
+  {
+    id: 'CarouselImages2',
+    url: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/5c5330b7210697c6dca6303647c64827"
+
+  },
+  {
+    id: 'CarouselImages3',
+    url: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/5ad8ba771574ca22f2502e6f5528d1e6"
+
+  },
+  {
+    id: 'CarouselImages4',
+    url: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/7387e31ecea03420ef6993cfafc6784c"
+
+  },
+
+];
 
 
-
-  <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/5c5330b7210697c6dca6303647c64827" class="h-[344px] object-cover py-10 px-6 " alt="Image 1" style="transition: transform 0.5s ease 0s; transform: scale(1);"></img>
+  // <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/5c5330b7210697c6dca6303647c64827" class="h-[344px] object-cover py-10 px-6 " alt="Image 1" style="transition: transform 0.5s ease 0s; transform: scale(1);"></img>
 
 
 

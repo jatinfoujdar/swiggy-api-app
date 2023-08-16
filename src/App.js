@@ -1,11 +1,11 @@
 import './App.css';
 import Header from './Component/Header';
-import Carousel from './Component/Carousel/Carousel';
+import CarouselImg from './Component/Carousel/CarouselImg';
 function App() {
   return (
     <>
     <Header/>
-    <Carousel/>
+    <CarouselImg/>
     </>
   );
 }
