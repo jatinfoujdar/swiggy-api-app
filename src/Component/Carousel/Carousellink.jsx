@@ -27,7 +27,7 @@ const Carousellink = () => {
           <AiOutlineArrowLeft className="h-6 w-6 hover:-translate-x-2 transition-transform duration-750 ease-in-out" />
         </button>
       )}
-      <h1 className="font-bold mt-8 text-2xl ml-12">What's on your mind?</h1>
+      <h1 className="font-bold mt-8 text-3xl text-orange-600 ml-12">What's on your mind?</h1>
       {currentIndex + 3 !== Option.length && (
         <button
           className="absolute z-10 top-1/2 right-2 bg-white text-gray-900 rounded-full p-4 transform -translate-y-1/2 hover:shadow-md focus:outline-none"
