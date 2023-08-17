@@ -1,21 +1,67 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselImages } from '../../utils/constants.js';
-import { Carousel } from 'react-responsive-carousel';
 
-// Remove any duplicate imports or declarations
 
 const CarouselImg = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevImage = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const nextImage = () => {
+    if (currentIndex + 3 < CarouselImages.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
   return (
-  <Carousel>
-      {CarouselImages.map((image) => (
-        <div key={image.id}>
-          <img src={image.url} alt={`Image ${image.id}`} />
-        </div>
-      ))}
-    </Carousel>
+    <div className="relative bg-gray-900">
+      {currentIndex !== 0 && (
+        <button
+          className="absolute z-10 top-1/2 left-2 bg-white text-gray-900 rounded-full p-4 transform -translate-y-1/2 hover:shadow-md focus:outline-none transition-all duration-500 ease-in-out"
+          onClick={prevImage}
+        >
+          <AiOutlineArrowLeft className="h-6 w-6 hover:-translate-x-2 transition-transform duration-750 ease-in-out" />
+        </button>
+      )}
+
+      {currentIndex + 3 !== CarouselImages.length && (
+        <button
+          className="absolute z-10 top-1/2 right-2 bg-white text-gray-900 rounded-full p-4 transform -translate-y-1/2 hover:shadow-md focus:outline-none"
+          onClick={nextImage}
+        >
+          <AiOutlineArrowRight className="h-6 w-6 hover:translate-x-2 transition-transform duration-750 ease-in-out" />
+        </button>
+      )}
+
+      <div
+        className="flex overflow-x-hidden transition-all duration-1000 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 24}rem)` }}
+      >
+        {CarouselImages.map((image, index) => (
+          <img
+            key={index}
+            src={image.url}
+            className={`h-[344px] object-cover py-10 px-6 ${
+              index === 0 ? 'ml-0' : ''
+            } ${
+              index === currentIndex
+                ? 'transform scale-105 transition-transform duration-500'
+                : 'transform scale-100 transition-transform duration-500'
+            }`}
+            alt={`Image ${index}`}
+            onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          />
+        ))}
+      </div>
+    </div>
   );
-}
+};
 
 export default CarouselImg;
