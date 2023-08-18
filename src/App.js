@@ -5,6 +5,8 @@ import CarouselImg from './Component/Carousel/CarouselImg';
 import Carousellink from './Component/Carousel/Carousellink';
 import Category from './Component/Restaurant/Category';
 import Filter from './Component/Carousel/Filter';
+// import Offer from './Component/Restaurant/Offer';
+// import Login from './Login/Login';
 function App() {
   return (
     <>
@@ -14,6 +16,7 @@ function App() {
     <Filter/>
     <RestaurantCards/>
     <Category/>
+    {/* <Offer/> */}
     </>
   );
 }

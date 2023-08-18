@@ -1,11 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { BiSolidOffer } from 'react-icons/bi';
 import {IoHelpBuoyOutline} from "react-icons/io5";
 import {FiShoppingCart} from "react-icons/fi";
 import {ImProfile} from "react-icons/im";
 
-   
+import offersSound from "../utils/Ham pe to hai hi no meme template with download link ft.@arpitbaala.mp3"; 
+
 const Header = () => {
+  const [audio] = useState(new Audio(offersSound));
+
+  const playAudio = () => {
+    audio.play(); 
+  };
   return (
 <nav className="  pt-2 pb-2 w-full z-20 top-0 left-0 border-b border-gray-200 ">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -39,7 +45,9 @@ const Header = () => {
       </a>
     </li>
     <li>
-      <a href="#" className=" flex items-center py-2 pl-3 pr-4 font-bold text-gray-900 rounded md:hover:text-orange-600 md:p-0 md:dark:hover:text-orange-600 dark:text-black dark:hover:bg-gray-700 dark:hover:text-orange-600 md:dark:hover:bg-transparent dark:border-gray-700">
+      <a href="#" className=" flex items-center py-2 pl-3 pr-4 font-bold text-gray-900 rounded md:hover:text-orange-600 md:p-0 md:dark:hover:text-orange-600 dark:text-black dark:hover:bg-gray-700 dark:hover:text-orange-600 md:dark:hover:bg-transparent dark:border-gray-700"
+      onClick={playAudio} 
+      >
         <BiSolidOffer className="mr-2" />
         Offers
       </a>
