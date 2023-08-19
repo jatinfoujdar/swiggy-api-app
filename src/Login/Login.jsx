@@ -40,8 +40,17 @@ const Login = () => {
             </svg>
           </div>
           <h2 className="text-2xl font-bold leading-tight text-black">
-            Sign in to your account
+            Sign in to your account           
           </h2>
+          <p class="mt-2text-sm text-gray-600 ">
+        Don&#x27;t have an account?{" "}
+        <a
+          href="/signup"
+          title=""
+          class="font-semibold text-black transition-all duration-200 hover:underline"
+        >
+          Create a free account
+        </a></p>
           <Formik
             initialValues={{ email: '', password: '' }}
             validationSchema={LoginSchema}

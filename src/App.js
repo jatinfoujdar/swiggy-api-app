@@ -7,6 +7,7 @@ import Carousellink from './Component/Carousel/Carousellink';
 import Category from './Component/Restaurant/Category';
 import Filter from './Component/Carousel/Filter';
 import Login from "./Login/Login";
+import Signup from './Login/Signup';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       <Category />
     </BrowserRouter>
