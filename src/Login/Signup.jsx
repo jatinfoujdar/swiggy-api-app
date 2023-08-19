@@ -14,7 +14,7 @@ const Signup = () => {
 
   const handleSignup = async (values) => {
     try {
-      await auth.createUserWithEmailAndPassword(values.email, values.password);
+      await auth.createUserWithEmailAndPassword(values.name, values.email, values.password);
       toast.success('Sign up successful!');
     } catch (error) {
       console.error('Error signing up:', error);
