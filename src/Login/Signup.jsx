@@ -22,18 +22,18 @@ const Signup = () => {
     const { name, email, password } = values;
   
     try {
-      // Create user with email and password
+  
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
   
       console.log('User object after signup:', user);
   
       if (user) {
-        // Set displayName explicitly before updating profile
+      
         user.displayName = name;
   
         try {
-          // Update the user's display name
+         
           await user.updateProfile({
             displayName: name,
           });
