@@ -8,10 +8,19 @@ import offersSound from "../utils/Ham pe to hai hi no meme template with downloa
 
 const Header = () => {
   const [audio] = useState(new Audio(offersSound));
+  const [userEmail, setUserEmail] = useState('');
 
   const playAudio = () => {
     audio.play(); 
   };
+
+  // const handleSignIn = (email) => {
+  //   setUserEmail(email);
+  //   playAudio();
+  //   // You can also handle the sign-in logic here if needed
+  // };
+
+
   return (
 <nav className="  pt-2 pb-2 w-full z-20 top-0 left-0 border-b border-gray-200 ">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -23,7 +32,8 @@ const Header = () => {
   <div className="flex md:order-2">
       <button type="button" className="text-white bg-orange-500 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-bold rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-orange-400 dark:hover:bg-orange-600 dark:focus:ring-orange-800">
       <a href="/login" className="block w-full h-full" > 
-        SignIn </a>
+      {userEmail ? userEmail.substring(0, 2) : 'Sign In'} </a>
+      {/* <Header userEmail={userEmail} /> */}
         </button>
       <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span className="sr-only">Open main menu</span>

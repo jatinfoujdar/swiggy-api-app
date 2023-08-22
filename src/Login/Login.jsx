@@ -36,7 +36,7 @@ const Login = () => {
       
       <div className="bg-white px-4 py-10 sm:px-6 sm:py-16 rounded-md xl:w-full xl:max-w-sm 2xl:max-w-md">
         <div className="mb-2 flex justify-center">
-          {/* Your SVG Logo */}
+         
         </div>
         <h2 className="text-2xl font-bold leading-tight text-black text-center mb-4">
           Sign in to your account           
@@ -86,27 +86,12 @@ const Login = () => {
               </div>
             </div>
             <div>
-              <button
-                type="submit"
-                className="btn-primary"
-              >
-                Get started
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="ml-2"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </button>
+            <button
+                 type="submit"
+                 className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring focus:ring-gray-400 focus:ring-opacity-50"
+               >
+                 Create Account
+               </button>
             </div>
           </Form>
         </Formik>
