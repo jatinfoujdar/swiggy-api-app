@@ -1,14 +1,14 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { auth } from '../firebase'; 
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-const auth = getAuth();
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -16,19 +16,24 @@ const LoginSchema = Yup.object().shape({
 });
 
 const Login = () => {
+  const navigate = useNavigate();
   const handleLogin = async (values) => {
     try {
       const { email, password } = values;
       await signInWithEmailAndPassword(auth, email, password);
-      toast.success('Logged in successfully!'); 
+      toast.success('Logged in successfully!');
+      navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
-      toast.error('Error logging in. Please check your credentials.'); 
+      toast.error('Error logging in. Please check your credentials.');
     }
   };
 
+
   return (
+    
     <section className="bg-black/70 min-h-screen flex items-center justify-center">
+      
       <div className="bg-white px-4 py-10 sm:px-6 sm:py-16 rounded-md xl:w-full xl:max-w-sm 2xl:max-w-md">
         <div className="mb-2 flex justify-center">
           {/* Your SVG Logo */}
