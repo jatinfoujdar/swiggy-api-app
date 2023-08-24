@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Component/Header';
-import RestaurantCards from "./Component/Restaurant/RestaurantCards"
+import RestaurantCard from "./Component/Restaurant/RestaurantCard"
 import CarouselImg from './Component/Carousel/CarouselImg';
 import Carousellink from './Component/Carousel/Carousellink';
 import Category from './Component/Restaurant/Category';
@@ -29,7 +29,7 @@ function Home() {
       <CarouselImg />
       <Carousellink />
       <Filter />
-      <RestaurantCards />
+      <RestaurantCard />
     </>
   );
 }
