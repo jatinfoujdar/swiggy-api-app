@@ -9,6 +9,9 @@ import offersSound from "../utils/Ham pe to hai hi no meme template with downloa
 const Header = () => {
   const [audio] = useState(new Audio(offersSound));
   const [userEmail, setUserEmail] = useState('');
+  const [searchText,setSearchText] = useState("KFC");
+
+  // const searchTxt = "KFC";
 
   const playAudio = () => {
     audio.play(); 
@@ -49,7 +52,10 @@ const Header = () => {
     className="flex-grow rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
     type="text"
     placeholder="Search"
-    value={""}
+    value={searchText}
+    onChange={(e)=>{
+     setSearchText(e.target.value);
+    }}
   />  
   <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-4 rounded-full">
  Search
