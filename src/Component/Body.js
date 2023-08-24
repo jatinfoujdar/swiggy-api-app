@@ -4,9 +4,9 @@ import { restaurantList } from "../MockData/restaurantList";
 
 const Body = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap">
       {restaurantList.map((restaurant) => (
-        <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+        <RestaurantCard {...restaurant.data} key={restaurant.data.id} value={""}/>
       ))}
     </div>
     
