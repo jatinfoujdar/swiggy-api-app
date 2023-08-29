@@ -3,10 +3,15 @@ import { BiSolidOffer } from 'react-icons/bi';
 import {IoHelpBuoyOutline} from "react-icons/io5";
 import {FiShoppingCart} from "react-icons/fi";
 import {ImProfile} from "react-icons/im";
-
+// import { restaurantList } from '../MockData/restaurantList';
 import offersSound from "../utils/Ham pe to hai hi no meme template with download link ft.@arpitbaala.mp3"; 
 
+function filterData(){
+  
+}
+
 const Header = () => {
+  // const [restaurants, setRestaurants] = useState(restaurantList);
   const [audio] = useState(new Audio(offersSound));
   const [userEmail, setUserEmail] = useState('');
   const [searchText,setSearchText] = useState("KFC");
@@ -57,7 +62,11 @@ const Header = () => {
      setSearchText(e.target.value);
     }}
   />  
-  <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-4 rounded-full">
+  <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-4 rounded-full"
+  onClick={()=>{
+    // filterData();
+  }}
+  >
  Search
 </button>   
 </div>
