@@ -52,24 +52,7 @@ const Header = () => {
   </div>
   <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
   <ul className="flex flex-col p-4   md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
-  <div className="flex items-center">
-  <input
-    className="flex-grow rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-    type="text"
-    placeholder="Search"
-    value={searchText}
-    onChange={(e)=>{
-     setSearchText(e.target.value);
-    }}
-  />  
-  <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-4 rounded-full"
-  onClick={()=>{
-    // filterData();
-  }}
-  >
- Search
-</button>   
-</div>
+ 
     <li>
       <a href="#" className=" flex items-center py-2 pl-3 pr-4 font-bold text-gray-900 rounded md:hover:text-orange-600 md:p-0 md:dark:hover:text-orange-600 dark:text-black dark:hover:bg-gray-700 dark:hover:text-orange-600 md:dark:hover:bg-transparent dark:border-gray-700">
       <ImProfile className="mr-2 "/>
