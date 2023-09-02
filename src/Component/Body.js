@@ -3,15 +3,30 @@ import RestaurantCard from "./Restaurant/RestaurantCard";
 import { restaurantList } from "../MockData/restaurantList";
 
 const Body = () => {
+
+
+
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantList);
 
   const filterData = () => {
-    const filtered = restaurantList.filter((restaurant) =>
-      restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())
+    const filtered = filteredRestaurants.filter((restaurant) =>
+      restaurant.card.data.name.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredRestaurants(filtered);
   };
+  
+
+  // useEffect(()=>{
+  //   getRestaurants();
+  // },[])
+
+  // async function getRestaurants(){
+  //   const data = await  fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.9124336&lng=75.7872709&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+  //   const json = await data.json();
+  //   console.log(json);
+  //   setFilteredRestaurants(json?.data?.cards)
+  // }
 
   return (
     <div>

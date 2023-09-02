@@ -2,6 +2,9 @@ export const IMG_CDN_URL= "https://res.cloudinary.com/swiggy/image/upload/fl_los
 
 export const FETCHAPI = "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId="
 
+export const Restaurant = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
+
+
 export const categories = [
   {
     id: 1,
@@ -52,6 +55,7 @@ export const categories = [
       'https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Placeholder_Plates@3x.png',
   },
 ];
+
 
 export const restaurantList = [
     {
