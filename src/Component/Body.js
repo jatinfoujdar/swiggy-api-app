@@ -15,7 +15,7 @@ const Body = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center mb-4"> {/* Centering container */}
+      <div className="flex justify-center items-center mb-4"> 
         <input
           className="rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
           type="text"
