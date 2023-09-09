@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import RestaurantCard from "./Restaurant/RestaurantCard";
 import { restaurantList } from "../MockData/restaurantList";
 
+function filterData(searchText,filteredRestaurants){
+
+const filterData = filteredRestaurants.filter((restaurant) => 
+   restaurant.data.name.includes(searchText)
+   );
+   return filterData;
+}
+
+
 const Body = () => {
-
-
-
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantList);
 
-  const filterData = () => {
-    const filtered = filteredRestaurants.filter((restaurant) =>
-      restaurant.card.data.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setFilteredRestaurants(filtered);
-  };
+  // const filterData = () => {
+  //   const filtered = filteredRestaurants.filter((restaurant) =>
+  //     restaurant.card.data.name.toLowerCase().includes(searchText.toLowerCase())
+  //   );
+  //   setFilteredRestaurants(filtered);
+  // };
   
 
   // useEffect(()=>{
@@ -42,7 +48,10 @@ const Body = () => {
         />
         <button
           className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-4 rounded-full ml-2"
-          onClick={filterData}
+          onClick={()=>{
+            const data = filterData(searchText,filteredRestaurants);
+            setFilteredRestaurants(data)
+          }}
         >
           Search
         </button>
