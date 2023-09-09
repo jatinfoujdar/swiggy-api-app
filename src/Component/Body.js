@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RestaurantCard from "./Restaurant/RestaurantCard";
-import { restaurantList } from "../MockData/restaurantList";
+// import { restaurantList } from "../MockData/restaurantList";
 
 function filterData(searchText,filteredRestaurants){
-
 const filterData = filteredRestaurants.filter((restaurant) => 
    restaurant.data.name.includes(searchText)
    );
@@ -13,26 +12,47 @@ const filterData = filteredRestaurants.filter((restaurant) =>
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantList);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  // const filterData = () => {
-  //   const filtered = filteredRestaurants.filter((restaurant) =>
-  //     restaurant.card.data.name.toLowerCase().includes(searchText.toLowerCase())
-  //   );
-  //   setFilteredRestaurants(filtered);
-  // };
+
+
+  useEffect(()=>{
+    getRestaurants()
+  },[]);
   
+        async function getRestaurants() {
+        // handle the error using try... catch
+        try {
+          const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
+          const json = await response.json();
+    
+          // initialize checkJsonData() function to check Swiggy Restaurant data
+          async function checkJsonData(jsonData) {
+            for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+    
+              // initialize checkData for Swiggy Restaurant data
+              let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    
+              // if checkData is not undefined then return it
+              if (checkData !== undefined) {
+                return checkData;
+              }
+            }
+          }
+    
+          // call the checkJsonData() function which return Swiggy Restaurant data
+          const resData = await checkJsonData(json);
+    
+          // update the state variable restaurants with Swiggy API data
+          setFilteredRestaurants(resData);
+        
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
-  // useEffect(()=>{
-  //   getRestaurants();
-  // },[])
 
-  // async function getRestaurants(){
-  //   const data = await  fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.9124336&lng=75.7872709&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-  //   const json = await data.json();
-  //   console.log(json);
-  //   setFilteredRestaurants(json?.data?.cards)
-  // }
+
 
   return (
     <div>
@@ -57,9 +77,11 @@ const Body = () => {
         </button>
       </div>
       <div className="flex flex-wrap">
-        {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard {...restaurant.data} key={restaurant.data.id} value={""} />
-        ))}
+        {filteredRestaurants.map((restaurant) => {
+         return(
+         <RestaurantCard {...restaurant?.info} key={restaurant?.info?.id}  value={""} />
+         ) 
+        })}
       </div>
     </div>
   );
