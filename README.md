@@ -7,10 +7,11 @@
 # Features:
   
   - Fetch Restaurants from Swiggy-Live-API 
-  -  Searching restaurants 
+  - Config Driven UI
+  - Searching restaurants 
   - Add food items to cart
-  -  Routing
-  -  Responsive
+  - Routing
+  - Responsive
 
 
 # Tech Stack
