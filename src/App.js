@@ -9,6 +9,7 @@ import Filter from './Component/Carousel/Filter';
 import Login from "./Login/Login";
 import Signup from './Login/Signup';
 import Body from './Component/Body';
+import { Error } from './Component/Error';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path='/aa' element={<Error />}/>
       </Routes>
       
       <Category />
