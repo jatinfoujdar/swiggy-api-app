@@ -10,6 +10,7 @@ import Login from "./Login/Login";
 import Signup from './Login/Signup';
 import Body from './Component/Body';
 import { Error } from './Component/Error';
+import RestaurantMenu from './Component/Restaurant/RestaurantMenu';
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path='*' element={<Error />}/>
+        <Route path="/restaurant/:id" element={<RestaurantMenu />}/>
       </Routes>
-      
       <Category />
     </BrowserRouter>
   );
