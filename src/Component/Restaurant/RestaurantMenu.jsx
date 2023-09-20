@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 const RestaurantMenu = () => {
-    const params = useParams();
-    const {id} = params
+    const {id} = useParams();
+
+    useEffect(()=>{
+      getRestaurantInfo();
+    },[])
+
+    async function getRestaurantInfo(){
+      
+    }
+    
   return (
     <div>RestaurantMenu:{id}</div>
   )
