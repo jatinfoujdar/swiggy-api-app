@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import {
   swiggy_menu_api_URL,
-  IMG_CDN_URL,
-  ITEM_IMG_CDN_URL,
   MENU_ITEM_TYPE_KEY,
   RESTAURANT_TYPE_KEY,
 } from "../../MockData/restaurantList";
